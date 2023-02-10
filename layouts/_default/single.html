@@ -17,7 +17,19 @@
     {{ if and (.Param "readingTime") (eq (.Param "readingTime") true) }}
       <span class="post-reading-time">:: {{ .ReadingTime }} min read ({{ .WordCount }} words)</span>
     {{ end }}
+    {{ with .Params.zettelcastenIndex }}
+      <span class="post-zettle">Zettlecasten ID: {{ . }}</span>
+    {{ end }}
   </div>
+
+  {{ if .Params.zettelcastenTags }}
+    <span class="post-tags">
+      Zettle Tags:
+      {{ range .Params.zettelcastenTags }}
+      <a href="{{ (urlize (printf "knowledge-system/slip-box/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+      {{ end }}
+    </span>
+  {{ end }}
 
   {{ if .Params.tags }}
   <span class="post-tags">
