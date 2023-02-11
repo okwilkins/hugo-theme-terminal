@@ -24,6 +24,15 @@
 
   {{ if .Params.zettelcastenTags }}
     <span class="post-tags">
+      Sequence:
+      {{ range .Params.sequence }}
+      <a href="{{ (urlize (printf "knowledge-system/slip-box/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+      {{ end }}
+    </span>
+  {{ end }}
+
+  {{ if .Params.zettelcastenTags }}
+    <span class="post-tags">
       Zettle Tags:
       {{ range .Params.zettelcastenTags }}
       <a href="{{ (urlize (printf "knowledge-system/slip-box/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
