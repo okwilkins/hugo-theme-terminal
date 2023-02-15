@@ -5,10 +5,6 @@
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{ if .Params.mathjax }}{{ partial "mathjax_support.html" . }}
-  {{ partial "mathjax_support.html" . }}
-{{ end }}
-
 {{ template "_internal/google_analytics.html" . }}
 
 <!-- Theme CSS -->
@@ -78,3 +74,8 @@
 
 <!-- Extended head section-->
 {{ partial "extended_head.html" . }}
+
+<!-- MathJax support-->
+{{ if .Params.mathjax }}
+  {{ partial "mathjax_support.html" . }}
+{{ end }}
