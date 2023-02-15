@@ -16,3 +16,10 @@
 @import 'code.css';
 @import 'terms.css';
 @import 'gist.css';
+
+code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+}
